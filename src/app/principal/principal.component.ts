@@ -16,17 +16,21 @@ export class PrincipalComponent {
 
   //json de clientes
 
-  clientes:Cliente[] =[];
+  clientes:Cliente[] = [];
 
    //Construtor
-   constructor(private service:ClienteService){
-
-   }
+   constructor(private service:ClienteService){}
   //método para selecionar clientes
 
+
   selecionar():void{
-    this.service.selecionar()
-    .subscribe(retorno => this.clientes = retorno);
+    this.service.selecionar().subscribe(retornar => this.clientes = retornar);
   }
 
+
+  //método de inicialização
+  ngOnInit(){
+    this.selecionar();
+
+  }
 }

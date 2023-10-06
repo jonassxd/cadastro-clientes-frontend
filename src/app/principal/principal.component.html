@@ -1,5 +1,5 @@
 <form>
-    <img src="assets/clienteH.png">
+    <img src="assets/cliente.png">
 
     <input type="text" placeholder="Nome" class="form-control">
     <input type="text" placeholder="Nome" class="form-control">
@@ -23,5 +23,14 @@
       <th>Selecionar</th>
     </tr>
   </thead>
-    <tbody></tbody>
-</table>
+
+  <tbody>
+      <tr *ngFor="let c of clientes">
+        <td></td>
+        <td>{{c.nome}}</td>
+        <td>{{c.idade}}</td>
+        <td>{{c.cidade}}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
