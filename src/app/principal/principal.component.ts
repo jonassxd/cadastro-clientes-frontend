@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class PrincipalComponent {
 
+    //variavel para a visibilidade dos botões
+
+    btnCadastrar: boolean = true;
 }
