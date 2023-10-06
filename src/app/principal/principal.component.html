@@ -1,17 +1,17 @@
 <form>
     <img src="assets/cliente.png">
 
-    <input type="text" placeholder="Nome" class="form-control">
-    <input type="text" placeholder="Nome" class="form-control">
-    <input type="text" placeholder="Nome" class="form-control">
+    <input type="text" placeholder="Nome" class="form-control" name="nome" [(ngModel)]="cliente.nome">
+    <input type="text" placeholder="Idade" class="form-control" name="idade" [(ngModel)]="cliente.idade">
+    <input type="text" placeholder="Cidade" class="form-control" name="cidade" [(ngModel)]="cliente.cidade">
 
     <input type="button" value="Cadastrar" *ngIf="btnCadastrar" class="btn btn-success">
     <input type="button" value="Alterar"  *ngIf="!btnCadastrar" class="btn btn-warning">
     <input type="button" value="Deletar" *ngIf="!btnCadastrar" class="btn btn-danger">
     <input type="button" value="Cancelar" *ngIf="!btnCadastrar" class="btn btn-secondary">
-
-
 </form>
+
+  <h1>{{cliente | json}}</h1>
 
 <table class="table">
   <thead>
@@ -25,8 +25,8 @@
   </thead>
 
   <tbody>
-      <tr *ngFor="let c of clientes">
-        <td></td>
+      <tr *ngFor="let c of clientes; index as i">
+        <td>{{i+1}}</td>
         <td>{{c.nome}}</td>
         <td>{{c.idade}}</td>
         <td>{{c.cidade}}</td>

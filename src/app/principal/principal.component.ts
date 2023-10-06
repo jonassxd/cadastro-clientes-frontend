@@ -8,6 +8,8 @@ import { Cliente } from '../model/Cliente';
   styleUrls: ['./principal.component.css']
 })
 export class PrincipalComponent {
+    //Objeto do tipo cliente
+    cliente = new Cliente();
 
     //variavel para a visibilidade dos botões
 
