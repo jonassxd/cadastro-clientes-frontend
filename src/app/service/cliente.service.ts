@@ -17,5 +17,11 @@ export class ClienteService {
   selecionar():Observable<Cliente[]>{
     return this.http.get<Cliente[]>(this.url);
       }
+  //método para cadastrar clientes
+
+  cadastrar(objeto:Cliente):Observable<Cliente>{
+    return this.http.post<Cliente>(this.url, objeto);
+  }
+
     }
 
