@@ -32,7 +32,14 @@ export class PrincipalComponent {
   //método de cadastro
   cadastrar():void{
     this.service.cadastrar(this.cliente)
-    .subscribe(retornar => {this.clientes.push(retornar);});
+    .subscribe(retornar => {
+
+      //cadastrar cliente no vetor
+      this.clientes.push(retornar);
+      //limpar formulário
+      this.cliente = new Cliente();
+      alert('Cliente cadastrado com sucesso!');
+    });
   }
 
 
