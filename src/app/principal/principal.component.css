@@ -1,0 +1,24 @@
+img{
+  width: 260px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+form{
+  width: 550px;
+  margin: 40px auto;
+  text-align: center;
+
+}
+
+input{
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+input[type="button"]{
+  margin-top: 10px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+
+}
