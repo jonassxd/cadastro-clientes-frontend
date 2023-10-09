@@ -28,7 +28,11 @@ export class ClienteService {
 
   alterar(objeto:Cliente):Observable<Cliente>{
     return this.http.put<Cliente>(this.url, objeto);
-
       }
+  //método para deletar clientes
+    deletar(id:number):Observable<void>{
+      return this.http.delete<void>(this.url + '/' + id);
     }
+    
+  }
 
