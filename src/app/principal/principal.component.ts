@@ -14,7 +14,8 @@ export class PrincipalComponent {
     //variavel para a visibilidade dos botões
 
     btnCadastrar: boolean = true;
-
+    //variavel para visibilidad da tabela
+    tabela:boolean = true;
 
   //json de clientes
 
@@ -42,6 +43,18 @@ export class PrincipalComponent {
     });
   }
 
+  //método para selecionar cliente especifico
+  selecionarCliente(posicao:number):void {
+
+    //selecionar cliente no vetor.
+    this.cliente = this.clientes[posicao];
+    //visibilidade dos botões
+    this.btnCadastrar = false;
+    //visibilidade da tabela
+    this.tabela = false;
+    
+
+  }
 
   //método de inicialização
   ngOnInit(){
