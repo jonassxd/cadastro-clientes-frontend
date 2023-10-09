@@ -52,8 +52,34 @@ export class PrincipalComponent {
     this.btnCadastrar = false;
     //visibilidade da tabela
     this.tabela = false;
-    
+  }
 
+  //método para alterar clientes
+
+  alterar():void{
+    this.service.alterar(this.cliente)
+    .subscribe(retornar => {
+
+      //obter posição do cliente no vetor
+      let posicao = this.clientes.findIndex(objeto => {
+        return objeto.id == retornar.id;
+      });
+      //alterar os dados do cliente no vetor
+      this.clientes[posicao] = retornar;
+      //limpar formulário
+      this.cliente = new Cliente();
+
+      //visibilidade dos botoes
+      this.btnCadastrar = true;
+
+      //visibilidade da tabela
+      this.tabela = true;
+
+      //mensagem
+      alert('O cliente foi alterado com sucesso!');
+
+
+    });
   }
 
   //método de inicialização
